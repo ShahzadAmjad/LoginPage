@@ -7,17 +7,14 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-        <!-- Icon -->
-        <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-        </div>
+
+
 
         <!-- Login Form -->
-        <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
+        <form id="LoginForm" data-parsley-validate class="form-horizontal form-label-left" asp-controller="Home" asp-action="Login" method="post">
+            <input asp-for="Email" type="text" id="Email" class="fadeIn second" name="Email" placeholder="Email Address">
+            <input asp-for="Password" type="text" id="Password" class="fadeIn third" name="Password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Signin">
         </form>
 
         <!-- Remind Passowrd -->
