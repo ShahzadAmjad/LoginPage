@@ -9,7 +9,14 @@ namespace LoginPage.Models.Login
     {
         public bool authenticate_User(string Email, string password)
         {
-            throw new NotImplementedException();
+            if(Email== "raza.hashmi@ark.re" & password== "Testrun123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
