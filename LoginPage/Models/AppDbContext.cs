@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace LoginPage.Models
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:DbContext 
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
-
-        public DbSet<Login.Login> Users { get; set; }
+        //public DbSet<Login.Login> Users { get; set; }
     }
 }
