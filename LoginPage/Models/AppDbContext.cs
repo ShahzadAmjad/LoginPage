@@ -12,6 +12,6 @@ namespace LoginPage.Models
         {
 
         }
-        //public DbSet<Login.Login> Users { get; set; }
+        public DbSet<Login.Login> Users { get; set; }
     }
 }
