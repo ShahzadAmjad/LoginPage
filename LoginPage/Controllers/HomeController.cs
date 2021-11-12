@@ -33,6 +33,11 @@ namespace LoginPage.Controllers
             }
             else
             {
+                //return JavaScript("Callback()");
+                //ViewBag.Message = "UserName or Password is Incorrect1";
+                //TempData["Message"] = "UserName or Password is Incorrect2";
+                ViewBag.JavaScriptFunction = string.Format("ErrorMessage();");
+
                 return View("Login");
             }
         }

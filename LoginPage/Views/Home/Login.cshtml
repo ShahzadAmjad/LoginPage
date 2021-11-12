@@ -14,10 +14,22 @@
             <input type="submit" class="fadeIn fourth" value="Signin">
         </form>
 
-        <!-- Remind Passowrd -->
+        <!-- Incorrect Username or Passowrd -->
         <div id="formFooter">
-            <label id="errormsg" name="errormsg" ></label>
+            <label class="text-danger" id="errormsg" name="errormsg"></label>
         </div>
 
     </div>
 </div>
+
+<script type="text/javascript">
+    function ErrorMessage() {
+        document.getElementById('errormsg').innerHTML = 'Username or Password is Incorrect';
+    };
+</script>
+@if (ViewBag.JavaScriptFunction != null)
+{
+    <script type="text/javascript">
+            @Html.Raw(ViewBag.JavaScriptFunction)
+    </script>
+}
