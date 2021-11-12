@@ -14,26 +14,17 @@ namespace LoginPage.Models.Login
         }
         public bool authenticate_User(string Email, string password)
         {
-
             Login login = new Login();
             login = Context.Users.Where(h => h.Email == Email &  h.Password == password).FirstOrDefault();
             
             if (login!=null)
             {
-                if (Email == login.Email & password == login.Password)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {
                 return false;
-            }
-           
+            }       
         }
     }
 }

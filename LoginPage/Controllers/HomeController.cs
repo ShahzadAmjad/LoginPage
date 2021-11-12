@@ -42,8 +42,7 @@ namespace LoginPage.Controllers
             else
             {
                 return View();
-            }
-            
+            }           
         }
     }
 }

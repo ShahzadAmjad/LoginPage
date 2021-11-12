@@ -11,10 +11,9 @@ namespace LoginPage.Models.Login
     {
         [Key]
         public int id { get; set; }
-
         [Required(ErrorMessage = "*Reqired")]
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
-        ErrorMessage = "Invalid email")]
+        ErrorMessage = "Invalid Email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "*Reqired")]
         public string Password { get; set; }
