@@ -12,11 +12,11 @@ namespace LoginPage.Models.Login
         [Key]
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "*Reqired")]
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
-        ErrorMessage = "Invalid email format")]
+        ErrorMessage = "Invalid email")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "*Reqired")]
         public string Password { get; set; }
     }
 }

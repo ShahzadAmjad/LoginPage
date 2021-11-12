@@ -9,8 +9,11 @@
     <div id="formContent">
         <!-- Login Form -->
         <form id="LoginForm" data-parsley-validate class="form-horizontal form-label-left" asp-controller="Home" asp-action="Login" method="post">
-            <input asp-for="Email" required type="text" id="Email" class="fadeIn second" name="Email" placeholder="Email Address">
-            <input asp-for="Password" required type="password" id="Password" class="fadeIn third " name="Password" placeholder="password">
+            
+            <input asp-for="Email"  type="text" id="Email" class="fadeIn second" name="Email" placeholder="Email Address">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input asp-for="Password"  type="password" id="Password" class="fadeIn third " name="Password" placeholder="password">
+            <span asp-validation-for="Password" class="text-danger"></span>
             <input type="submit" class="fadeIn fourth" value="Signin">
         </form>
 
@@ -19,7 +22,7 @@
             <label class="text-danger" id="errormsg" name="errormsg"></label>
         </div>
 
-    </div>
+      </div>
 </div>
 
 <script type="text/javascript">

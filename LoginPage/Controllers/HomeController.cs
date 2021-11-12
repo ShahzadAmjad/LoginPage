@@ -26,20 +26,24 @@ namespace LoginPage.Controllers
         [HttpPost]
         public ViewResult Login(Login login)
         {
-            bool b= _loginRepository.authenticate_User(login.Email, login.Password);
-            if(b)
+            if(ModelState.IsValid)
             {
-                return View("Home");
+                bool auth = _loginRepository.authenticate_User(login.Email, login.Password);
+                if (auth)
+                {
+                    return View("Home");
+                }
+                else
+                {
+                    ViewBag.JavaScriptFunction = string.Format("ErrorMessage();");
+                    return View("Login");
+                }
             }
             else
             {
-                //return JavaScript("Callback()");
-                //ViewBag.Message = "UserName or Password is Incorrect1";
-                //TempData["Message"] = "UserName or Password is Incorrect2";
-                ViewBag.JavaScriptFunction = string.Format("ErrorMessage();");
-
-                return View("Login");
+                return View();
             }
+            
         }
     }
 }

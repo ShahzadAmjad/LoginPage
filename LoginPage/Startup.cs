@@ -31,10 +31,10 @@ namespace LoginPage
             services.AddMvc(options => options.EnableEndpointRouting = false);
             
             //For in memory collection
-            //services.AddSingleton<ILoginRepository, MockLoginRepository>();
+            services.AddSingleton<ILoginRepository, MockLoginRepository>();
 
             //For SQL classes
-            services.AddScoped<ILoginRepository, SQLLoginRepository>();
+            //services.AddScoped<ILoginRepository, SQLLoginRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,9 +52,7 @@ namespace LoginPage
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Login}");
-            });
-
-            
+            });          
         }
     }
 }
