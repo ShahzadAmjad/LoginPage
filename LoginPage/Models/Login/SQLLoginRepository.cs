@@ -7,9 +7,33 @@ namespace LoginPage.Models.Login
 {
     public class SQLLoginRepository : ILoginRepository
     {
+        private readonly AppDbContext Context;
+        public SQLLoginRepository(AppDbContext context)
+        {
+            Context = context;
+        }
         public bool authenticate_User(string Email, string password)
         {
-            throw new NotImplementedException();
+
+            Login login = new Login();
+            login = Context.Users.Where(h => h.Email == Email &  h.Password == password).FirstOrDefault();
+            
+            if (login!=null)
+            {
+                if (Email == login.Email & password == login.Password)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+           
         }
     }
 }
