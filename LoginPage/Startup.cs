@@ -30,10 +30,10 @@ namespace LoginPage
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
             
-            //For in memory collection
+            //For in memory collection (For Db Use Please Comment out below line)
             services.AddSingleton<ILoginRepository, MockLoginRepository>();
 
-            //For SQL classes
+            //For SQL classes(For Db Use Please UnComment out below line)
             //services.AddScoped<ILoginRepository, SQLLoginRepository>();
         }
 
